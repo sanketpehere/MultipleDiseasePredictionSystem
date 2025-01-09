@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="jumbotron">
+  {% if session.get('logged_in') %}
+  <h1>Welcome back, {{ session['user_name'] }}!</h1>
+  <p class="lead">
+    Access the Multiple Disease Prediction System and manage your health
+    records.
+  </p>
+  <a class="btn btn-primary btn-lg" href="/predict" role="button"
+    >Start Prediction</a
+  >
+  {% else %}
+  <h1>Welcome to the Multiple Disease Prediction System</h1>
+  <p class="lead">
+    Please log in or sign up to use the prediction system and check your health
+    status.
+  </p>
+  <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up Now</a>
+  <a class="btn btn-secondary btn-lg" href="/login" role="button">Login</a>
+  {% endif %}
+</div>
+{% endblock %}

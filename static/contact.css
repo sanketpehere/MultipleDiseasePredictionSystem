@@ -1,0 +1,6 @@
+.contact {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}

@@ -1,0 +1,159 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <h1>Disease Prediction</h1>
+  <p class="lead">
+    Select a disease and fill out the form to get a prediction result.
+  </p>
+
+  <!-- Tab navigation for the different diseases -->
+  <ul class="nav nav-tabs" id="diseaseTab" role="tablist">
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        id="disease1-tab"
+        data-toggle="tab"
+        href="#disease1"
+        role="tab"
+        aria-controls="disease1"
+        aria-selected="true"
+        >Disease 1</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="disease2-tab"
+        data-toggle="tab"
+        href="#disease2"
+        role="tab"
+        aria-controls="disease2"
+        aria-selected="false"
+        >Disease 2</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="disease3-tab"
+        data-toggle="tab"
+        href="#disease3"
+        role="tab"
+        aria-controls="disease3"
+        aria-selected="false"
+        >Disease 3</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="disease4-tab"
+        data-toggle="tab"
+        href="#disease4"
+        role="tab"
+        aria-controls="disease4"
+        aria-selected="false"
+        >Disease 4</a
+      >
+    </li>
+  </ul>
+
+  <!-- Tab content for each disease form -->
+  <div class="tab-content mt-4" id="diseaseTabContent">
+    <!-- Disease 1 Form -->
+    <div
+      class="tab-pane fade show active"
+      id="disease1"
+      role="tabpanel"
+      aria-labelledby="disease1-tab"
+    >
+      <form method="POST" action="/predict/disease1">
+        <div class="form-group">
+          <label for="age1">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age1"
+            name="age"
+            placeholder="Enter your age"
+            required
+          />
+        </div>
+        <!-- Add more fields specific to Disease 1 -->
+        <button type="submit" class="btn btn-primary">Predict Disease 1</button>
+      </form>
+    </div>
+
+    <!-- Disease 2 Form -->
+    <div
+      class="tab-pane fade"
+      id="disease2"
+      role="tabpanel"
+      aria-labelledby="disease2-tab"
+    >
+      <form method="POST" action="/predict/disease2">
+        <div class="form-group">
+          <label for="age2">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age2"
+            name="age"
+            placeholder="Enter your age"
+            required
+          />
+        </div>
+        <!-- Add more fields specific to Disease 2 -->
+        <button type="submit" class="btn btn-primary">Predict Disease 2</button>
+      </form>
+    </div>
+
+    <!-- Disease 3 Form -->
+    <div
+      class="tab-pane fade"
+      id="disease3"
+      role="tabpanel"
+      aria-labelledby="disease3-tab"
+    >
+      <form method="POST" action="/predict/disease3">
+        <div class="form-group">
+          <label for="age3">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age3"
+            name="age"
+            placeholder="Enter your age"
+            required
+          />
+        </div>
+        <!-- Add more fields specific to Disease 3 -->
+        <button type="submit" class="btn btn-primary">Predict Disease 3</button>
+      </form>
+    </div>
+
+    <!-- Disease 4 Form -->
+    <div
+      class="tab-pane fade"
+      id="disease4"
+      role="tabpanel"
+      aria-labelledby="disease4-tab"
+    >
+      <form method="POST" action="/predict/disease4">
+        <div class="form-group">
+          <label for="age4">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age4"
+            name="age"
+            placeholder="Enter your age"
+            required
+          />
+        </div>
+        <!-- Add more fields specific to Disease 4 -->
+        <button type="submit" class="btn btn-primary">Predict Disease 4</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
