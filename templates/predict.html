@@ -10,148 +10,909 @@
     <li class="nav-item">
       <a
         class="nav-link active"
-        id="disease1-tab"
+        id="heart-tab"
         data-toggle="tab"
-        href="#disease1"
+        href="#heart"
         role="tab"
-        aria-controls="disease1"
+        aria-controls="heart"
         aria-selected="true"
-        >Disease 1</a
+        >Heart Disease</a
       >
     </li>
     <li class="nav-item">
       <a
         class="nav-link"
-        id="disease2-tab"
+        id="diabetes-tab"
         data-toggle="tab"
-        href="#disease2"
+        href="#diabetes"
         role="tab"
-        aria-controls="disease2"
+        aria-controls="diabetes"
         aria-selected="false"
-        >Disease 2</a
+        >Diabetes</a
       >
     </li>
     <li class="nav-item">
       <a
         class="nav-link"
-        id="disease3-tab"
+        id="kidney-tab"
         data-toggle="tab"
-        href="#disease3"
+        href="#kidney"
         role="tab"
-        aria-controls="disease3"
+        aria-controls="kidney"
         aria-selected="false"
-        >Disease 3</a
+        >Kidney Disease</a
       >
     </li>
     <li class="nav-item">
       <a
         class="nav-link"
-        id="disease4-tab"
+        id="liver-tab"
         data-toggle="tab"
-        href="#disease4"
+        href="#liver"
         role="tab"
-        aria-controls="disease4"
+        aria-controls="liver"
         aria-selected="false"
-        >Disease 4</a
+        >Liver Disease</a
       >
     </li>
   </ul>
 
   <!-- Tab content for each disease form -->
   <div class="tab-content mt-4" id="diseaseTabContent">
-    <!-- Disease 1 Form -->
+    <!-- Heart Disease  Form -->
     <div
       class="tab-pane fade show active"
-      id="disease1"
+      id="heart"
       role="tabpanel"
-      aria-labelledby="disease1-tab"
+      aria-labelledby="heart-tab"
     >
-      <form method="POST" action="/predict/disease1">
+      <form method="POST" action="/predict/heart">
         <div class="form-group">
-          <label for="age1">Age</label>
+          <label for="age-heart">Age (years) </label>
           <input
             type="number"
             class="form-control"
-            id="age1"
+            id="age-heart"
             name="age"
             placeholder="Enter your age"
+            min="20"
+            max="60"
             required
           />
         </div>
-        <!-- Add more fields specific to Disease 1 -->
-        <button type="submit" class="btn btn-primary">Predict Disease 1</button>
+        <div class="form-group">
+          <label for="gender-heart">Gender [1: Male, 2: Female]</label>
+          <select class="form-control" id="gender-heart" name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="height-heart">Height (cm)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="height-heart"
+            name="height"
+            placeholder="Enter your height"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="weight-heart">Weight (kg)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="weight-heart"
+            name="weight"
+            placeholder="Enter your weight"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="systolic_bp-heart"
+            >Systolic Blood Pressure (mmHg) [Normal Range: 90-120]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="systolic_bp-heart"
+            name="systolic_bp"
+            placeholder="Enter your systolic blood pressure"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="diastolic_bp-heart"
+            >Diastolic Blood Pressure (mmHg) [Normal Range: 60-80]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="diastolic_bp-heart"
+            name="diastolic_bp"
+            placeholder="Enter your diastolic blood pressure"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="cholesterol-heart">Cholesterol </label>
+          <select
+            class="form-control"
+            id="cholesterol-heart"
+            name="cholesterol"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="1">Normal</option>
+            <option value="2">Above Normal</option>
+            <option value="3">Well Above Normal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="glucose-heart">Glucose</label>
+          <select
+            class="form-control"
+            id="glucose-heart"
+            name="glucose"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+
+            <option value="1">Normal</option>
+            <option value="2">Above Normal</option>
+            <option value="3">Well Above Normal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="smoking-heart">Smoking </label>
+          <select
+            class="form-control"
+            id="smoking-heart"
+            name="smoking"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="alcohol-heart">Alcohol Consumption ? </label>
+          <select
+            class="form-control"
+            id="alcohol-heart"
+            name="alcohol"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="physical_activity-heart">Physical Activity ?</label>
+          <select
+            class="form-control"
+            id="physical_activity-heart"
+            name="physical_activity"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <p>
+          We have observed that
+          <strong>Logistic Regression and Decision Tree </strong> models perform
+          best for heart disease. Still, you can select the algorithms if you
+          want to go with them.
+        </p>
+        <div class="form-group">
+          <label>Select Algorithms:</label><br />
+          <input
+            type="checkbox"
+            name="algorithms"
+            value="logistic_regression"
+          />
+          Logistic Regression<br />
+          <input type="checkbox" name="algorithms" value="decision_tree" />
+          Decision Tree<br />
+          <input type="checkbox" name="algorithms" value="random_forest" />
+          Random Forest<br />
+          <input type="checkbox" name="algorithms" value="knn" />
+          KNN<br />
+          <input type="checkbox" name="algorithms" value="svm" />
+          SVM<br />
+          <input type="checkbox" name="algorithms" value="gradient_boosting" />
+          Gradient Boosting<br />
+          <input type="checkbox" name="algorithms" value="adaboost" />
+          adaboost<br />
+
+          <!-- Add other algorithms as needed -->
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Predict Heart Disease
+        </button>
       </form>
     </div>
 
-    <!-- Disease 2 Form -->
+    <!-- Diabetes Form -->
     <div
       class="tab-pane fade"
-      id="disease2"
+      id="diabetes"
       role="tabpanel"
-      aria-labelledby="disease2-tab"
+      aria-labelledby="diabetes-tab"
     >
-      <form method="POST" action="/predict/disease2">
+      <form method="POST" action="/predict/diabetes">
         <div class="form-group">
-          <label for="age2">Age</label>
+          <label for="gender-diabetes">Gender</label>
+          <select
+            class="form-control"
+            id="gender-diabetes"
+            name="gender"
+            required
+          >
+            <option value=" " disabled selected>Select a Gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="age-diabetes">Age (years)</label>
           <input
             type="number"
             class="form-control"
-            id="age2"
+            id="age-diabetes"
             name="age"
             placeholder="Enter your age"
             required
           />
         </div>
-        <!-- Add more fields specific to Disease 2 -->
-        <button type="submit" class="btn btn-primary">Predict Disease 2</button>
+        <div class="form-group">
+          <label for="hypertension-diabetes">Hypertension ?</label>
+          <select
+            class="form-control"
+            id="hypertension-diabetes"
+            name="hypertension"
+            required
+          >
+            <option value=" " disabled selected>Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="heart_disease-diabetes">Have Heart Disease ?</label>
+          <select
+            class="form-control"
+            id="heart_disease-diabetes"
+            name="heart_disease"
+            required
+          >
+            <option value=" " disabled selected>Select</option>
+
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="smoking_history-diabetes">Smoking History </label>
+          <select
+            class="form-control"
+            id="smoking_history-diabetes"
+            name="smoking_history"
+            required
+          >
+            <option value=" " disabled selected>Select</option>
+
+            <option value="No Info">No Info</option>
+            <option value="never">never</option>
+            <option value="former">former</option>
+            <option value="current">current</option>
+            <option value="not current">not current</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bmi-diabetes"
+            >BMI (Body Mass Index) [Normal Range: 18.5-24.9]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="bmi-diabetes"
+            name="bmi"
+            placeholder="Enter your BMI"
+            step="0.01"
+            min="0"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="hemoglobin_a1c-diabetes"
+            >Hemoglobin A1c Level (%) [Normal Range: 4.0-5.6]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="hemoglobin_a1c-diabetes"
+            name="hemoglobin_a1c"
+            placeholder="Enter your Hemoglobin A1c level"
+            step="0.1"
+            min="0"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="blood_glucose-diabetes"
+            >Blood Glucose Level (mg/dL) [Normal Range: 70-140]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="blood_glucose-diabetes"
+            name="blood_glucose"
+            placeholder="Enter your blood glucose level"
+            min="0"
+            required
+          />
+        </div>
+        <p>
+          We have observed that
+          <strong>Logistic Regression and Decision Tree</strong> models perform
+          best for diabetes prediction. Still, you can select the algorithms if
+          you want to go with them.
+        </p>
+        <div class="form-group">
+          <label>Select Algorithms:</label><br />
+          <input
+            type="checkbox"
+            name="algorithms"
+            value="logistic_regression"
+          />
+          Logistic Regression<br />
+          <input type="checkbox" name="algorithms" value="decision_tree" />
+          Decision Tree<br />
+          <input type="checkbox" name="algorithms" value="random_forest" />
+          Random Forest<br />
+          <input type="checkbox" name="algorithms" value="knn" />
+          KNN<br />
+          <input type="checkbox" name="algorithms" value="svm" />
+          SVM<br />
+          <input type="checkbox" name="algorithms" value="gradient_boosting" />
+          Gradient Boosting<br />
+          <input type="checkbox" name="algorithms" value="adaboost" />
+          adaboost<br />
+
+          <!-- Add other algorithms as needed -->
+        </div>
+        <button type="submit" class="btn btn-primary">Predict Diabetes</button>
       </form>
     </div>
 
-    <!-- Disease 3 Form -->
+    <!-- Kidney  Disease  Form -->
     <div
       class="tab-pane fade"
-      id="disease3"
+      id="kidney"
       role="tabpanel"
-      aria-labelledby="disease3-tab"
+      aria-labelledby="kidney-tab"
     >
-      <form method="POST" action="/predict/disease3">
+      <form method="POST" action="/predict/kidney">
         <div class="form-group">
-          <label for="age3">Age</label>
+          <label for="age-kidney">Age (years) </label>
           <input
             type="number"
             class="form-control"
-            id="age3"
+            id="age-kidney"
             name="age"
             placeholder="Enter your age"
             required
           />
         </div>
-        <!-- Add more fields specific to Disease 3 -->
-        <button type="submit" class="btn btn-primary">Predict Disease 3</button>
+        <div class="form-group">
+          <label for="blood_pressure-kidney"
+            >Blood Pressure (mmHg) [Normal Range: 60-120]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="blood_pressure-kidney"
+            name="blood_pressure"
+            placeholder="Enter your blood pressure"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="specific_gravity-kidney"
+            >Specific Gravity [Normal Range: 1.015-1.025]</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="specific_gravity-kidney"
+            name="specific_gravity"
+            placeholder="Enter specific gravity"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="albumin-kidney">Albumin [Normal Range: 0-4]</label>
+          <input
+            type="number"
+            class="form-control"
+            id="albumin-kidney"
+            name="albumin"
+            placeholder="Enter albumin level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="sugar-kidney">Sugar [Normal Range: 0-5]</label>
+          <input
+            type="number"
+            class="form-control"
+            id="sugar-kidney"
+            name="sugar"
+            placeholder="Enter sugar level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="red_blood_cells-kidney">Red Blood Cells</label>
+          <select
+            class="form-control"
+            id="red_blood_cells-kidney"
+            name="red_blood_cells"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="normal">Normal</option>
+            <option value="abnormal">Abnormal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pus_cells-kidney">Pus Cells</label>
+          <select
+            class="form-control"
+            id="pus_cells-kidney"
+            name="pus_cells"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="normal">Normal</option>
+            <option value="abnormal">Abnormal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pus_cell_clumps-kidney">Pus Cell Clumps</label>
+          <select
+            class="form-control"
+            id="pus_cell_clumps-kidney"
+            name="pus_cell_clumps"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="notpresent">Not Present</option>
+            <option value="present">Present</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bacteria-kidney">Bacteria</label>
+          <select
+            class="form-control"
+            id="bacteria-kidney"
+            name="bacteria"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="notpresent">Not Present</option>
+            <option value="present">Present</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="blood_glucose_random-kidney"
+            >Blood Glucose Random (mg/dL) [Normal Range: 70-140]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="blood_glucose_random-kidney"
+            name="blood_glucose_random"
+            placeholder="Enter random blood glucose level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="blood_urea-kidney"
+            >Blood Urea (mg/dL) [Normal Range: 7-20]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="blood_urea-kidney"
+            name="blood_urea"
+            placeholder="Enter blood urea level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="serum_creatinine-kidney"
+            >Serum Creatinine (mg/dL) [Normal Range: 0.6-1.2]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="serum_creatinine-kidney"
+            name="serum_creatinine"
+            placeholder="Enter serum creatinine level"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="sodium-kidney"
+            >Sodium (mEq/L) [Normal Range: 135-145]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="sodium-kidney"
+            name="sodium"
+            placeholder="Enter serum sodium level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="potassium-kidney"
+            >Potassium (mEq/L) [Normal Range: 3.5-5.0]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="potassium-kidney"
+            name="potassium"
+            placeholder="Enter serum potassium level"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="hemoglobin-kidney"
+            >Hemoglobin (g/dL) [Normal Range: 13.8-17.2 (male), 12.1-15.1
+            (female)]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="hemoglobin-kidney"
+            name="hemoglobin"
+            placeholder="Enter hemoglobin level"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="pcv-kidney"
+            >Packed Cell Volume (PCV) (%) [Normal Range: 38.3-48.6 (male),
+            35.5-44.9 (female)]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="pcv-kidney"
+            name="pcv"
+            placeholder="Enter packed cell volume"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="white_blood_cells-kidney"
+            >White Blood Cells (cells/μL) [Normal Range: 4,000-11,000]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="white_blood_cells-kidney"
+            name="white_blood_cells"
+            placeholder="Enter white blood cell count"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="red_blood_cells_count-kidney"
+            >Red Blood Cells Count (million cells/μL) [Normal Range: 4.7-6.1
+            (male), 4.2-5.4 (female)]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="red_blood_cells_count-kidney"
+            name="red_blood_cells_count"
+            placeholder="Enter red blood cells count"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="hypertension-kidney">Hypertension</label>
+          <select
+            class="form-control"
+            id="hypertension-kidney"
+            name="hypertension"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="diabetes_mellitus-kidney">Diabetes Mellitus</label>
+          <select
+            class="form-control"
+            id="diabetes_mellitus-kidney"
+            name="diabetes_mellitus"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cad-kidney">Coronary Artery Disease</label>
+          <select class="form-control" id="cad-kidney" name="cad" required>
+            <option value="" disabled selected>Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="appetite-kidney">Appetite</label>
+          <select
+            class="form-control"
+            id="appetite-kidney"
+            name="appetite"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="good">Good</option>
+            <option value="poor">Poor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pedal_edema-kidney">Pedal Edema</label>
+          <select
+            class="form-control"
+            id="pedal_edema-kidney"
+            name="pedal_edema"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="anemia-kidney">Anemia</label>
+          <select
+            class="form-control"
+            id="anemia-kidney"
+            name="anemia"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <p>
+          We have observed that
+          <strong>Logistic Regression and Decision Tree </strong> models perform
+          best for kidney disease. Still, you can select the algorithms if you
+          want to go with them.
+        </p>
+        <div class="form-group">
+          <label>Select Algorithms:</label><br />
+          <input
+            type="checkbox"
+            name="algorithms"
+            value="logistic_regression"
+          />
+          Logistic Regression<br />
+          <input type="checkbox" name="algorithms" value="decision_tree" />
+          Decision Tree<br />
+          <input type="checkbox" name="algorithms" value="random_forest" />
+          Random Forest<br />
+          <input type="checkbox" name="algorithms" value="knn" />
+          KNN<br />
+          <input type="checkbox" name="algorithms" value="svm" />
+          SVM<br />
+          <input type="checkbox" name="algorithms" value="gradient_boosting" />
+          Gradient Boosting<br />
+          <input type="checkbox" name="algorithms" value="adaboost" />
+          adaboost<br />
+
+          <!-- Add other algorithms as needed -->
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Predict Kidney Disease
+        </button>
       </form>
     </div>
 
-    <!-- Disease 4 Form -->
+    <!-- Liver Disease Form -->
     <div
       class="tab-pane fade"
-      id="disease4"
+      id="liver"
       role="tabpanel"
-      aria-labelledby="disease4-tab"
+      aria-labelledby="liver-tab"
     >
-      <form method="POST" action="/predict/disease4">
+      <form method="POST" action="/predict/liver">
         <div class="form-group">
-          <label for="age4">Age</label>
+          <label for="age-liver">Age (years)</label>
           <input
             type="number"
             class="form-control"
-            id="age4"
+            id="age-liver"
             name="age"
             placeholder="Enter your age"
             required
           />
         </div>
-        <!-- Add more fields specific to Disease 4 -->
-        <button type="submit" class="btn btn-primary">Predict Disease 4</button>
+        <div class="form-group">
+          <label for="gender-liver">Gende</label>
+          <select class="form-control" id="gender-liver" name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="total_bilirubin-liver"
+            >Total Bilirubin (mg/dL) [Normal Range: 0.1-1.2]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="total_bilirubin-liver"
+            name="total_bilirubin"
+            placeholder="Enter total bilirubin level"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="direct_bilirubin-liver"
+            >Direct Bilirubin (mg/dL) [Normal Range: 0-0.4]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="direct_bilirubin-liver"
+            name="direct_bilirubin"
+            placeholder="Enter direct bilirubin level"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="alkaline_phosphotase-liver"
+            >Alkaline Phosphotase (U/L) [Normal Range: 44-147]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="alkaline_phosphotase-liver"
+            name="alkaline_phosphotase"
+            placeholder="Enter alkaline phosphotase level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="alamine_aminotransferase-liver"
+            >Alamine Aminotransferase (U/L) [Normal Range: 7-56]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="alamine_aminotransferase-liver"
+            name="alamine_aminotransferase"
+            placeholder="Enter alamine aminotransferase level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="aspartate_aminotransferase-liver"
+            >Aspartate Aminotransferase (U/L) [Normal Range: 10-40]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="aspartate_aminotransferase-liver"
+            name="aspartate_aminotransferase"
+            placeholder="Enter aspartate aminotransferase level"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="total_proteins-liver"
+            >Total Proteins (g/dL) [Normal Range: 6-8.3]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="total_proteins-liver"
+            name="total_proteins"
+            placeholder="Enter total proteins level"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="albumin-liver"
+            >Albumin (g/dL) [Normal Range: 3.4-5.4]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="albumin-liver"
+            name="albumin"
+            placeholder="Enter albumin level"
+            step="0.1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="albumin_globulin_ratio-liver"
+            >Albumin and Globulin Ratio [Normal Range: 1-2.5]</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="albumin_globulin_ratio-liver"
+            name="albumin_globulin_ratio"
+            placeholder="Enter albumin and globulin ratio"
+            step="0.1"
+            required
+          />
+        </div>
+
+        <p>
+          We have observed that
+          <strong>Logistic Regression and Decision Tree </strong> models perform
+          best for liver disease. Still, you can select the algorithms if you
+          want to go with them.
+        </p>
+        <div class="form-group">
+          <label>Select Algorithms:</label><br />
+          <input
+            type="checkbox"
+            name="algorithms"
+            value="logistic_regression"
+          />
+          Logistic Regression<br />
+          <input type="checkbox" name="algorithms" value="decision_tree" />
+          Decision Tree<br />
+          <input type="checkbox" name="algorithms" value="random_forest" />
+          Random Forest<br />
+          <input type="checkbox" name="algorithms" value="knn" />
+          KNN<br />
+          <input type="checkbox" name="algorithms" value="svm" />
+          SVM<br />
+          <input type="checkbox" name="algorithms" value="gradient_boosting" />
+          Gradient Boosting<br />
+          <input type="checkbox" name="algorithms" value="adaboost" />
+          adaboost<br />
+
+          <!-- Add other algorithms as needed -->
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Predict Liver Disease
+        </button>
       </form>
     </div>
   </div>
