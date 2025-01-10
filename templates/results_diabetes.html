@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <h1 class="mb-4">Diabetes Prediction Results</h1>
+
+  <!-- Display User Details -->
+  <h3>User Details</h3>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td>{{ user_name }}</td>
+      </tr>
+      <tr>
+        <td><strong>Email</strong></td>
+        <td>{{ user_email }}</td>
+      </tr>
+      <tr>
+        <td><strong>Mobile Number</strong></td>
+        <td>{{ user_phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Age</td>
+        <td>{{ user_details.age }}</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Gender</td>
+        <td>{{ user_details.gender }}</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Hypertension</td>
+        <td>{{ user_details.hypertension }}</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Heart Disease</td>
+        <td>{{ user_details.heart_disease }}</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Smoking History</td>
+        <td>{{ user_details.smoking_history }}</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>BMI</td>
+        <td>{{ user_details.bmi }}</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Hemoglobin A1c Level</td>
+        <td>{{ user_details.hemoglobin_a1c }}</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Blood Glucose Level</td>
+        <td>{{ user_details.blood_glucose }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Display Prediction Results -->
+  <h3>Model-wise Prediction Results</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Disease</th>
+        <th>Name of Selected Model</th>
+        <th>Probability</th>
+        <th>Final Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in results %}
+      <tr>
+        <td>{{ row.sr_no }}</td>
+        <td>{{ row.disease }}</td>
+        <td>{{ row.model }}</td>
+        <td>{{ row.probability }}</td>
+        <td>{{ row.result }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary mt-4" onclick="window.print()">
+    Print Results
+  </button>
+</div>
+{% endblock %}

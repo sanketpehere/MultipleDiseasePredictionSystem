@@ -28,7 +28,7 @@
         role="tab"
         aria-controls="diabetes"
         aria-selected="false"
-        >Diabetes</a
+        >Diabetes Disease</a
       >
     </li>
     <li class="nav-item">
@@ -75,13 +75,11 @@
             id="age-heart"
             name="age"
             placeholder="Enter your age"
-            min="20"
-            max="60"
             required
           />
         </div>
         <div class="form-group">
-          <label for="gender-heart">Gender [1: Male, 2: Female]</label>
+          <label for="gender-heart">Gender</label>
           <select class="form-control" id="gender-heart" name="gender" required>
             <option value="" disabled selected>Select Gender</option>
             <option value="1">Male</option>
@@ -211,13 +209,17 @@
           want to go with them.
         </p>
         <div class="form-group">
-          <label>Select Algorithms:</label><br />
+          <label><strong>Select Algorithms:</strong></label
+          ><br />
+
           <input
             type="checkbox"
             name="algorithms"
             value="logistic_regression"
           />
-          Logistic Regression<br />
+          Logistic Regression
+
+          <br />
           <input type="checkbox" name="algorithms" value="decision_tree" />
           Decision Tree<br />
           <input type="checkbox" name="algorithms" value="random_forest" />
@@ -233,9 +235,7 @@
 
           <!-- Add other algorithms as needed -->
         </div>
-        <button type="submit" class="btn btn-primary">
-          Predict Heart Disease
-        </button>
+        <button type="submit" class="btn btn-primary">Get Results</button>
       </form>
     </div>
 
@@ -384,11 +384,11 @@
           <input type="checkbox" name="algorithms" value="gradient_boosting" />
           Gradient Boosting<br />
           <input type="checkbox" name="algorithms" value="adaboost" />
-          adaboost<br />
+          Adaboost<br />
 
           <!-- Add other algorithms as needed -->
         </div>
-        <button type="submit" class="btn btn-primary">Predict Diabetes</button>
+        <button type="submit" class="btn btn-primary">Get Results</button>
       </form>
     </div>
 
@@ -738,9 +738,7 @@
 
           <!-- Add other algorithms as needed -->
         </div>
-        <button type="submit" class="btn btn-primary">
-          Predict Kidney Disease
-        </button>
+        <button type="submit" class="btn btn-primary">Get Results</button>
       </form>
     </div>
 
@@ -764,7 +762,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="gender-liver">Gende</label>
+          <label for="gender-liver">Gender</label>
           <select class="form-control" id="gender-liver" name="gender" required>
             <option value="" disabled selected>Select Gender</option>
             <option value="Male">Male</option>
