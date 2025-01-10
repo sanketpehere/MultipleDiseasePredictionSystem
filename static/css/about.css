@@ -1,0 +1,79 @@
+/* Basic styling for the about page */
+.about-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa; /* Light background for sections */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff; /* Primary color for main title */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #343a40; /* Dark gray color for section titles */
+  margin-bottom: 1rem;
+}
+
+.section-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555; /* Medium gray color for text */
+  margin-bottom: 1rem;
+}
+
+.feature-list,
+.team-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+}
+
+.feature-item,
+.team-member {
+  font-size: 1.1rem;
+  color: #555; /* Medium gray color for list items */
+  margin-bottom: 0.5rem;
+  padding-left: 1.5em; /* Indent the list items */
+  position: relative;
+}
+
+.feature-item::before,
+.team-member::before {
+  content: "•";
+  color: #007bff; /* Primary color for bullet points */
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.contact-info {
+  font-size: 1.1rem;
+  color: #555; /* Medium gray color for contact info */
+  margin-bottom: 0.5rem;
+}
+
+.gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allow images to wrap to the next line */
+}
+
+.gallery-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Rounded corners for images */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Add some spacing between sections */
+.about-section + .about-section {
+  margin-top: 2rem;
+}

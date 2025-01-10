@@ -1,0 +1,102 @@
+/* Styling for the disease prediction page */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f8f9fa; /* Light background for the container */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #007bff; /* Primary color for the main title */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.nav-tabs .nav-link {
+  color: #007bff; 
+  font-weight: 600;
+}
+
+
+.nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #007bff; /* Primary color for active tab */
+}
+
+.tab-content {
+  margin-top: 2rem;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  color: #555; /* Medium gray color for labels */
+}
+
+.form-control {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px; /* Rounded input fields */
+  border: 1px solid #ccc; /* Light border */
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px; /* Rounded button */
+  width: 25%;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.mt-3, .mt-4 {
+  margin-top: 1rem;
+}
+
+/* Inline block style for form-group to display labels and inputs side by side */
+.form-group.inline {
+  display: inline-block;
+  width: 48%;
+  margin-right: 2%;
+} 
+
+.form-group.inline:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .form-group.inline {
+      display: block;
+      width: 100%;
+      margin-right: 0;
+  }
+}
+
+.algorithm-selection {
+  padding: 1.5rem;
+  background-color: #fff; /* White background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  margin-bottom: 2rem; /* Space at the bottom */
+}
+
+.algorithm-selection input
+{
+  margin: 10px 15px;
+  size: 10px;
+}

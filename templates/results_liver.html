@@ -1,9 +1,15 @@
 {% extends 'base.html' %} {% block content %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/result_lv.css') }}"
+/>
+
 <div class="container mt-5">
-  <h1 class="mb-4">Liver Disease Prediction Results</h1>
+  <h1 class="mb-4"><strong>Liver Disease Prediction Results</strong></h1>
 
   <!-- Display User Details -->
-  <h3>User Details</h3>
+  <h3><strong>User Details</strong></h3>
   <table class="table table-bordered table">
     <tbody>
       <tr>
@@ -20,6 +26,11 @@
       </tr>
     </tbody>
   </table>
+  <br />
+  <br />
+  <br />
+
+  <h3><strong>Health Information</strong></h3>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -81,9 +92,12 @@
       </tr>
     </tbody>
   </table>
+  <br />
+  <br />
+  <br />
 
   <!-- Display Prediction Results -->
-  <h3>Model-wise Prediction Results</h3>
+  <h3><strong>Model-wise Prediction Results</strong></h3>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -111,4 +125,7 @@
     Print Results
   </button>
 </div>
+<br />
+<br />
+<br />
 {% endblock %}

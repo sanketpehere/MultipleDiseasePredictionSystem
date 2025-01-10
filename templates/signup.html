@@ -1,62 +1,72 @@
 {% extends "base.html" %} {% block content %}
-<h1>Sign Up</h1>
-<form method="POST" action="/signup">
-  <div class="form-group">
-    <label for="name">Full Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="name"
-      name="name"
-      placeholder="Your Full Name"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      name="email"
-      placeholder="Your Email"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="phone">Phone Number</label>
-    <input
-      type="tel"
-      class="form-control"
-      id="phone"
-      name="phone"
-      placeholder="Your Phone Number"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password"
-      name="password"
-      placeholder="Your Password"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="confirm-password">Confirm Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="confirm-password"
-      name="confirm-password"
-      placeholder="Confirm Your Password"
-      required
-    />
-  </div>
-  <button type="submit" class="btn btn-primary">Sign Up</button>
-</form>
-<p class="mt-3">Already have an account? <a href="/login">Login here</a>.</p>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/signup.css') }}"
+/>
+
+<section class="signup-section">
+  <h1>Sign Up</h1>
+  <form method="POST" action="/signup">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Your Full Name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Your Email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        name="phone"
+        placeholder="Your Phone Number"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Your Password"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="confirm-password"
+        name="confirm-password"
+        placeholder="Confirm Your Password"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+  <p class="mt-3">Already have an account? <a href="/login">Login here</a>.</p>
+</section>
+<br />
+<br />
+<br />
 {% endblock %}

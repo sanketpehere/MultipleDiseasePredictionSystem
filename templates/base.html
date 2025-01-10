@@ -8,10 +8,19 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a class="navbar-brand" href="/">Multiple Disease Prediction System</a>
         <button
@@ -64,8 +73,8 @@
 
     <!-- Content of the page will go here -->
     <div class="container mt-4">{% block content %} {% endblock %}</div>
-
-    <footer class="bg-light text-center py-4 mt-5">
+    <br />
+    <footer class="bg-light text-center py-4 mt-5 ft">
       <p>
         &copy; 2024 Multiple Disease Prediction System. All rights reserved.
       </p>

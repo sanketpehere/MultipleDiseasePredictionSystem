@@ -1,0 +1,54 @@
+/* Apply the Open Sans font to the entire body */
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #28a745;
+  --accent-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar
+{
+  margin: 10px auto; /* Centers the navbar horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+}
+
+a {
+  transition: color 0.3s ease, font-size 0.3s ease;
+  color: black;
+  margin: 5px 5px;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #007bff; /* Blue color */
+  font-size: 20px; /* Increase font size slightly */
+}
+
+.navbar-toggler
+{
+  color: black;
+}
+
+.ft
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: rgb(0, 0, 0);
+  text-align: center;
+
+}

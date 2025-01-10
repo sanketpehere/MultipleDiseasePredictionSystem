@@ -1,7 +1,80 @@
 {% extends "base.html" %} {% block content %}
-<h1>About the Multiple Disease Prediction System</h1>
-<p>
-  This system uses advanced algorithms to predict potential diseases based on
-  user inputs.
-</p>
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/about.css') }}"
+/>
+
+<section class="about-section">
+  <h1 class="about-title">About the Multiple Disease Prediction System</h1>
+</section>
+
+<section class="about-section">
+  <h2 class="section-title">Introduction</h2>
+  <p class="section-content">
+    This system leverages advanced machine learning algorithms to provide
+    accurate predictions of potential diseases based on user inputs. By
+    analyzing various health parameters and symptoms, the system aims to assist
+    users in identifying possible health issues early.
+  </p>
+</section>
+
+<section class="about-section">
+  <h2 class="section-title">How It Works</h2>
+  <p class="section-content">
+    The Multiple Disease Prediction System collects user data through a
+    user-friendly interface. The data is then processed and analyzed using a
+    series of machine learning models to predict potential diseases. The system
+    provides users with detailed reports and recommendations based on the
+    analysis.
+  </p>
+</section>
+
+<section class="about-section">
+  <h2 class="section-title">Features</h2>
+  <ul class="feature-list">
+    <li class="feature-item">Easy-to-use interface for data input</li>
+    <li class="feature-item">
+      Advanced machine learning algorithms for accurate predictions
+    </li>
+    <li class="feature-item">Detailed health reports and recommendations</li>
+    <li class="feature-item">Secure and confidential data handling</li>
+  </ul>
+</section>
+
+<section class="about-section">
+  <h2 class="section-title">Team</h2>
+  <p class="section-content">
+    Our team consists of experienced data scientists, healthcare professionals,
+    and software developers dedicated to improving healthcare through
+    technology.
+  </p>
+  <ul class="team-list">
+    <li class="team-member">
+      <strong>Sanket Pehere</strong>
+    </li>
+    <li class="team-member">
+      <strong>Utkash Kulkarni</strong>
+    </li>
+    <li class="team-member">
+      <strong>Shubham Gadekar</strong>
+    </li>
+  </ul>
+</section>
+
+<section class="about-section">
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery">
+    <img
+      src="{{ url_for('static', filename='images/img1.png') }}"
+      alt="Algorithm Visualization"
+      class="gallery-image"
+    />
+    <img
+      src="{{ url_for('static', filename='images/img2.png') }}"
+      alt="Our Team"
+      class="gallery-image"
+    />
+  </div>
+</section>
 {% endblock %}

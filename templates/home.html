@@ -1,4 +1,10 @@
 {% extends "base.html" %} {% block content %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+
 <div class="jumbotron">
   {% if session.get('logged_in') %}
   <h1>Welcome back, {{ session['user_name'] }}!</h1>
@@ -15,8 +21,13 @@
     Please log in or sign up to use the prediction system and check your health
     status.
   </p>
-  <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up Now</a>
-  <a class="btn btn-secondary btn-lg" href="/login" role="button">Login</a>
+  <div class="btn">
+    <a class="btn btn-primary btn-lg" href="/signup" role="button"
+      >Sign Up Now</a
+    >
+    <a class="btn btn-secondary btn-lg" href="/login" role="button">Login</a>
+  </div>
+
   {% endif %}
 </div>
 {% endblock %}

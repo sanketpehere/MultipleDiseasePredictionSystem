@@ -1,4 +1,27 @@
 {% extends "base.html" %} {% block content %}
-<h1>Contact Us</h1>
-<p>If you have any questions or feedback, please reach out to us.</p>
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/contact.css') }}"
+/>
+
+<section class="contact-section">
+  <h1>Contact Us</h1>
+  <p>If you have any questions or feedback, please reach out to us.</p>
+
+  <div class="contact-details">
+    <div class="contact-item">
+      <h2 class="contact-title">Address</h2>
+      <p>Government College Of Enginerring And Research Avasari Khurd Pune.</p>
+    </div>
+    <div class="contact-item">
+      <h2 class="contact-title">Phone</h2>
+      <p>+918767252917</p>
+    </div>
+    <div class="contact-item">
+      <h2 class="contact-title">Email</h2>
+      <p>sanketpehere234@gmail.com</p>
+    </div>
+  </div>
+</section>
 {% endblock %}

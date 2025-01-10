@@ -1,4 +1,8 @@
 {% extends 'base.html' %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/predict.css') }}"
+/>
 <div class="container mt-5">
   <h1>Disease Prediction</h1>
   <p class="lead">
@@ -202,42 +206,50 @@
             <option value="1">Yes</option>
           </select>
         </div>
-        <p>
-          We have observed that
-          <strong>Logistic Regression and Decision Tree </strong> models perform
-          best for heart disease. Still, you can select the algorithms if you
-          want to go with them.
-        </p>
-        <div class="form-group">
-          <label><strong>Select Algorithms:</strong></label
-          ><br />
+        <div class="algorithm-selection">
+          <p>
+            We have observed that
+            <strong>Logistic Regression and Decision Tree </strong> models
+            perform best for heart disease. Still, you can select the algorithms
+            if you want to go with them.
+          </p>
+          <div class="form-group">
+            <label><strong>Select Algorithms:</strong></label
+            ><br />
 
-          <input
-            type="checkbox"
-            name="algorithms"
-            value="logistic_regression"
-          />
-          Logistic Regression
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="logistic_regression"
+            />
+            Logistic Regression<br />
+            <input
+              class="ck"
+              type="checkbox"
+              name="algorithms"
+              value="decision_tree"
+            />
+            Decision Tree<br />
+            <input type="checkbox" name="algorithms" value="random_forest" />
+            Random Forest<br />
+            <input type="checkbox" name="algorithms" value="knn" /> KNN<br />
+            <input type="checkbox" name="algorithms" value="svm" /> SVM<br />
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="gradient_boosting"
+            />
+            Gradient Boosting<br />
+            <input type="checkbox" name="algorithms" value="adaboost" />
+            adaboost<br />
 
-          <br />
-          <input type="checkbox" name="algorithms" value="decision_tree" />
-          Decision Tree<br />
-          <input type="checkbox" name="algorithms" value="random_forest" />
-          Random Forest<br />
-          <input type="checkbox" name="algorithms" value="knn" />
-          KNN<br />
-          <input type="checkbox" name="algorithms" value="svm" />
-          SVM<br />
-          <input type="checkbox" name="algorithms" value="gradient_boosting" />
-          Gradient Boosting<br />
-          <input type="checkbox" name="algorithms" value="adaboost" />
-          adaboost<br />
-
-          <!-- Add other algorithms as needed -->
+            <!-- Add other algorithms as needed -->
+          </div>
         </div>
         <button type="submit" class="btn btn-primary">Get Results</button>
       </form>
     </div>
+    <br />
 
     <!-- Diabetes Form -->
     <div
@@ -359,34 +371,40 @@
             required
           />
         </div>
-        <p>
-          We have observed that
-          <strong>Logistic Regression and Decision Tree</strong> models perform
-          best for diabetes prediction. Still, you can select the algorithms if
-          you want to go with them.
-        </p>
-        <div class="form-group">
-          <label>Select Algorithms:</label><br />
-          <input
-            type="checkbox"
-            name="algorithms"
-            value="logistic_regression"
-          />
-          Logistic Regression<br />
-          <input type="checkbox" name="algorithms" value="decision_tree" />
-          Decision Tree<br />
-          <input type="checkbox" name="algorithms" value="random_forest" />
-          Random Forest<br />
-          <input type="checkbox" name="algorithms" value="knn" />
-          KNN<br />
-          <input type="checkbox" name="algorithms" value="svm" />
-          SVM<br />
-          <input type="checkbox" name="algorithms" value="gradient_boosting" />
-          Gradient Boosting<br />
-          <input type="checkbox" name="algorithms" value="adaboost" />
-          Adaboost<br />
+        <div class="algorithm-selection">
+          <p>
+            We have observed that
+            <strong>Logistic Regression and Decision Tree </strong> models
+            perform best for heart disease. Still, you can select the algorithms
+            if you want to go with them.
+          </p>
+          <div class="form-group">
+            <label><strong>Select Algorithms:</strong></label
+            ><br />
 
-          <!-- Add other algorithms as needed -->
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="logistic_regression"
+            />
+            Logistic Regression<br />
+            <input type="checkbox" name="algorithms" value="decision_tree" />
+            Decision Tree<br />
+            <input type="checkbox" name="algorithms" value="random_forest" />
+            Random Forest<br />
+            <input type="checkbox" name="algorithms" value="knn" /> KNN<br />
+            <input type="checkbox" name="algorithms" value="svm" /> SVM<br />
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="gradient_boosting"
+            />
+            Gradient Boosting<br />
+            <input type="checkbox" name="algorithms" value="adaboost" />
+            adaboost<br />
+
+            <!-- Add other algorithms as needed -->
+          </div>
         </div>
         <button type="submit" class="btn btn-primary">Get Results</button>
       </form>
@@ -709,34 +727,40 @@
             <option value="no">No</option>
           </select>
         </div>
-        <p>
-          We have observed that
-          <strong>Logistic Regression and Decision Tree </strong> models perform
-          best for kidney disease. Still, you can select the algorithms if you
-          want to go with them.
-        </p>
-        <div class="form-group">
-          <label>Select Algorithms:</label><br />
-          <input
-            type="checkbox"
-            name="algorithms"
-            value="logistic_regression"
-          />
-          Logistic Regression<br />
-          <input type="checkbox" name="algorithms" value="decision_tree" />
-          Decision Tree<br />
-          <input type="checkbox" name="algorithms" value="random_forest" />
-          Random Forest<br />
-          <input type="checkbox" name="algorithms" value="knn" />
-          KNN<br />
-          <input type="checkbox" name="algorithms" value="svm" />
-          SVM<br />
-          <input type="checkbox" name="algorithms" value="gradient_boosting" />
-          Gradient Boosting<br />
-          <input type="checkbox" name="algorithms" value="adaboost" />
-          adaboost<br />
+        <div class="algorithm-selection">
+          <p>
+            We have observed that
+            <strong>Logistic Regression and Decision Tree </strong> models
+            perform best for heart disease. Still, you can select the algorithms
+            if you want to go with them.
+          </p>
+          <div class="form-group">
+            <label><strong>Select Algorithms:</strong></label
+            ><br />
 
-          <!-- Add other algorithms as needed -->
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="logistic_regression"
+            />
+            Logistic Regression<br />
+            <input type="checkbox" name="algorithms" value="decision_tree" />
+            Decision Tree<br />
+            <input type="checkbox" name="algorithms" value="random_forest" />
+            Random Forest<br />
+            <input type="checkbox" name="algorithms" value="knn" /> KNN<br />
+            <input type="checkbox" name="algorithms" value="svm" /> SVM<br />
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="gradient_boosting"
+            />
+            Gradient Boosting<br />
+            <input type="checkbox" name="algorithms" value="adaboost" />
+            adaboost<br />
+
+            <!-- Add other algorithms as needed -->
+          </div>
         </div>
         <button type="submit" class="btn btn-primary">Get Results</button>
       </form>
@@ -879,34 +903,40 @@
           />
         </div>
 
-        <p>
-          We have observed that
-          <strong>Logistic Regression and Decision Tree </strong> models perform
-          best for liver disease. Still, you can select the algorithms if you
-          want to go with them.
-        </p>
-        <div class="form-group">
-          <label>Select Algorithms:</label><br />
-          <input
-            type="checkbox"
-            name="algorithms"
-            value="logistic_regression"
-          />
-          Logistic Regression<br />
-          <input type="checkbox" name="algorithms" value="decision_tree" />
-          Decision Tree<br />
-          <input type="checkbox" name="algorithms" value="random_forest" />
-          Random Forest<br />
-          <input type="checkbox" name="algorithms" value="knn" />
-          KNN<br />
-          <input type="checkbox" name="algorithms" value="svm" />
-          SVM<br />
-          <input type="checkbox" name="algorithms" value="gradient_boosting" />
-          Gradient Boosting<br />
-          <input type="checkbox" name="algorithms" value="adaboost" />
-          adaboost<br />
+        <div class="algorithm-selection">
+          <p>
+            We have observed that
+            <strong>Logistic Regression and Decision Tree </strong> models
+            perform best for heart disease. Still, you can select the algorithms
+            if you want to go with them.
+          </p>
+          <div class="form-group">
+            <label><strong>Select Algorithms:</strong></label
+            ><br />
 
-          <!-- Add other algorithms as needed -->
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="logistic_regression"
+            />
+            Logistic Regression<br />
+            <input type="checkbox" name="algorithms" value="decision_tree" />
+            Decision Tree<br />
+            <input type="checkbox" name="algorithms" value="random_forest" />
+            Random Forest<br />
+            <input type="checkbox" name="algorithms" value="knn" /> KNN<br />
+            <input type="checkbox" name="algorithms" value="svm" /> SVM<br />
+            <input
+              type="checkbox"
+              name="algorithms"
+              value="gradient_boosting"
+            />
+            Gradient Boosting<br />
+            <input type="checkbox" name="algorithms" value="adaboost" />
+            adaboost<br />
+
+            <!-- Add other algorithms as needed -->
+          </div>
         </div>
         <button type="submit" class="btn btn-primary">
           Predict Liver Disease

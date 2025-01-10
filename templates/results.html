@@ -1,121 +1,140 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container mt-5">
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/results.css') }}"
+/>
+<div class="results-section container mt-5">
   <h1 class="mb-4">Heart Disease Prediction Results</h1>
 
   <!-- Display User Details -->
-  <h3>User Details</h3>
-  <table class="table table-bordered">
-    <tbody>
-      <tr>
-        <td><strong>Name</strong></td>
-        <td>{{ user_name }}</td>
-      </tr>
-      <tr>
-        <td><strong>Email</strong></td>
-        <td>{{ user_email }}</td>
-      </tr>
-      <tr>
-        <td><strong>Mobile Number</strong></td>
-        <td>{{ user_phone }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="user-details mb-4">
+    <h3><strong>User Details</strong></h3>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>{{ user_name }}</td>
+        </tr>
+        <tr>
+          <td><strong>Email</strong></td>
+          <td>{{ user_email }}</td>
+        </tr>
+        <tr>
+          <td><strong>Mobile Number</strong></td>
+          <td>{{ user_phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <br />
-  <!-- Display User Details -->
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Sr. No.</th>
-        <th>Attribute</th>
-        <th>Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Age</td>
-        <td>{{ user_details.age }}</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Gender</td>
-        <td>{{ user_details.gender }}</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Height (cm)</td>
-        <td>{{ user_details.height }}</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Weight (kg)</td>
-        <td>{{ user_details.weight }}</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Systolic Blood Pressure</td>
-        <td>{{ user_details.systolic_bp }}</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Diastolic Blood Pressure</td>
-        <td>{{ user_details.diastolic_bp }}</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Cholesterol</td>
-        <td>{{ user_details.cholesterol }}</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>Glucose</td>
-        <td>{{ user_details.glucose }}</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>Smoking</td>
-        <td>{{ user_details.smoking }}</td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>Alcohol Consumption</td>
-        <td>{{ user_details.alcohol }}</td>
-      </tr>
-      <tr>
-        <td>11</td>
-        <td>Physical Activity</td>
-        <td>{{ user_details.physical_activity }}</td>
-      </tr>
-    </tbody>
-  </table>
   <br />
+  <!-- Display User Attributes -->
+  <div class="user-attributes mb-4">
+    <h3><strong>Health Inforamtion</strong></h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Attribute</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Age</td>
+          <td>{{ user_details.age }}</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Gender</td>
+          <td>{{ user_details.gender }}</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Height (cm)</td>
+          <td>{{ user_details.height }}</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Weight (kg)</td>
+          <td>{{ user_details.weight }}</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Systolic Blood Pressure</td>
+          <td>{{ user_details.systolic_bp }}</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Diastolic Blood Pressure</td>
+          <td>{{ user_details.diastolic_bp }}</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Cholesterol</td>
+          <td>{{ user_details.cholesterol }}</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Glucose</td>
+          <td>{{ user_details.glucose }}</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Smoking</td>
+          <td>{{ user_details.smoking }}</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Alcohol Consumption</td>
+          <td>{{ user_details.alcohol }}</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Physical Activity</td>
+          <td>{{ user_details.physical_activity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+  <br />
+
   <!-- Display Prediction Results -->
-  <h3>Model Wise Prediction Results</h3>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Sr. No.</th>
-        <th>Disease</th>
-        <th>Name of Selected Model</th>
-        <th>Probability</th>
-        <th>Final Result</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for row in results %}
-      <tr>
-        <td>{{ row.sr_no }}</td>
-        <td>{{ row.disease }}</td>
-        <td>{{ row.model }}</td>
-        <td>{{ row.probability }}</td>
-        <td>{{ row.result }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <div class="prediction-results">
+    <h3><strong>Model Wise Prediction Results</strong></h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Disease</th>
+          <th>Name of Selected Model</th>
+          <th>Probability</th>
+          <th>Final Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in results %}
+        <tr>
+          <td>{{ row.sr_no }}</td>
+          <td>{{ row.disease }}</td>
+          <td>{{ row.model }}</td>
+          <td>{{ row.probability }}</td>
+          <td>{{ row.result }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
   <button class="btn btn-primary mt-4" onclick="window.print()">
     Print Results
   </button>
+  <br />
+  <br />
+  <br />
+  <br />
 </div>
 {% endblock %}
