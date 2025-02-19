@@ -9,7 +9,7 @@
 
   <!-- Display User Details -->
   <h3><strong>User Details</strong></h3>
-  <table class="table table-bordered">
+  <table class="table custom-table">
     <tbody>
       <tr>
         <td><strong>Name</strong></td>
@@ -26,10 +26,8 @@
     </tbody>
   </table>
   <br />
-  <br />
-  <br />
   <h3><strong>Health Information</strong></h3>
-  <table class="table table-bordered">
+  <table class="table custom-table">
     <thead>
       <tr>
         <th>Sr. No.</th>
@@ -81,17 +79,15 @@
     </tbody>
   </table>
   <br />
-  <br />
-  <br />
   <!-- Display Prediction Results -->
   <h3><strong>Model-wise Prediction Results</strong></h3>
-  <table class="table table-bordered">
+  <table class="table custom-table">
     <thead>
       <tr>
         <th>Sr. No.</th>
-        <th>Disease</th>
+        <!--<th>Disease</th> -->
         <th>Name of Selected Model</th>
-        <th>Probability</th>
+        <!--<th>Probability</th> -->
         <th>Final Result</th>
       </tr>
     </thead>
@@ -99,16 +95,20 @@
       {% for row in results %}
       <tr>
         <td>{{ row.sr_no }}</td>
-        <td>{{ row.disease }}</td>
+        <!--<td>{{ row.disease }}</td> -->
         <td>{{ row.model }}</td>
-        <td>{{ row.probability }}</td>
+        <!--<td>{{ row.probability }}</td> -->
         <td>{{ row.result }}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 
-  <button class="btn btn-primary mt-4" onclick="window.print()">
+  <button
+    class="btn btn-primary mt-4"
+    id="print-button"
+    onclick="window.print()"
+  >
     Print Results
   </button>
 </div>

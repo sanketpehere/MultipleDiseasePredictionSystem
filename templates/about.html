@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-
+<!--
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/about.css') }}"
@@ -74,6 +74,94 @@
       src="{{ url_for('static', filename='images/img2.png') }}"
       alt="Our Team"
       class="gallery-image"
+    />
+  </div>
+</section> -->
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/about.css') }}"
+/>
+
+<section class="hero-section">
+  <h1 class="hero-title">About the Multiple Disease Prediction System</h1>
+  <p class="hero-subtitle">
+    Leveraging machine learning to assist in early disease detection and
+    improved healthcare outcomes.
+  </p>
+</section>
+
+<section class="about-section">
+  <h2 class="section-title">How It Works</h2>
+  <div class="content-wrapper">
+    <p>
+      The system collects user data through an interactive interface, analyzes
+      health parameters using multiple machine learning models, and provides
+      insights on potential diseases.
+    </p>
+    <img
+      src="{{ url_for('static', filename='images/workflow.png') }}"
+      alt="System Workflow"
+      class="section-image"
+    />
+  </div>
+</section>
+
+<section class="about-section features">
+  <h2 class="section-title">Key Features</h2>
+  <div class="feature-cards">
+    <div class="feature-card">
+      <h3>Easy Data Input</h3>
+      <p>Simple and intuitive form for entering health data.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Machine Learning Models</h3>
+      <p>Utilizes advanced ML algorithms for precise analysis.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Health Reports</h3>
+      <p>Detailed reports to help users understand their health better.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Data Privacy</h3>
+      <p>Secure handling of sensitive user information.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about-section team">
+  <h2 class="section-title">Meet the Team</h2>
+  <div class="team-cards">
+    <div class="team-member">
+      <img
+        src="{{ url_for('static', filename='images/member1.jpg') }}"
+        alt="Sanket Pehere"
+      />
+      <h3>Sanket Pehere</h3>
+    </div>
+    <div class="team-member">
+      <img
+        src="{{ url_for('static', filename='images/member2.png') }}"
+        alt="Utkarsh Kulkarni"
+      />
+      <h3>Utkarsh Kulkarni</h3>
+    </div>
+    <div class="team-member">
+      <img
+        src="{{ url_for('static', filename='images/member3.png') }}"
+        alt="Shubham Gadekar"
+      />
+      <h3>Shubham Gadekar</h3>
+    </div>
+  </div>
+</section>
+
+<section class="about-section gallery">
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery-grid">
+    <img
+      src="{{ url_for('static', filename='images/img1.png') }}"
+      alt="Algorithm Visualization"
     />
   </div>
 </section>

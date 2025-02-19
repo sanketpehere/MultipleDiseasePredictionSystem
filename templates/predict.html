@@ -3,6 +3,7 @@
   rel="stylesheet"
   href="{{ url_for('static', filename='css/predict.css') }}"
 />
+
 <div class="container mt-5">
   <h1>Disease Prediction</h1>
   <p class="lead">
@@ -15,7 +16,7 @@
       <a
         class="nav-link active"
         id="heart-tab"
-        data-toggle="tab"
+        data-bs-toggle="tab"
         href="#heart"
         role="tab"
         aria-controls="heart"
@@ -27,7 +28,7 @@
       <a
         class="nav-link"
         id="diabetes-tab"
-        data-toggle="tab"
+        data-bs-toggle="tab"
         href="#diabetes"
         role="tab"
         aria-controls="diabetes"
@@ -39,7 +40,7 @@
       <a
         class="nav-link"
         id="kidney-tab"
-        data-toggle="tab"
+        data-bs-toggle="tab"
         href="#kidney"
         role="tab"
         aria-controls="kidney"
@@ -51,7 +52,7 @@
       <a
         class="nav-link"
         id="liver-tab"
-        data-toggle="tab"
+        data-bs-toggle="tab"
         href="#liver"
         role="tab"
         aria-controls="liver"
@@ -72,7 +73,16 @@
     >
       <form method="POST" action="/predict/heart">
         <div class="form-group">
-          <label for="age-heart">Age (years) </label>
+          <label
+            for="age-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Enter Your Age."
+            data-bs-custom-class="custom-tooltip"
+            >Age (years)
+          </label>
+
           <input
             type="number"
             class="form-control"
@@ -80,10 +90,20 @@
             name="age"
             placeholder="Enter your age"
             required
+            data-toggle="tooltip"
+            title="Please enter your age in years."
           />
         </div>
         <div class="form-group">
-          <label for="gender-heart">Gender</label>
+          <label
+            for="gender-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Enter Your Gender."
+            data-bs-custom-class="custom-tooltip"
+            >Gender</label
+          >
           <select class="form-control" id="gender-heart" name="gender" required>
             <option value="" disabled selected>Select Gender</option>
             <option value="1">Male</option>
@@ -91,7 +111,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="height-heart">Height (cm)</label>
+          <label
+            for="height-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Enter Your Height in CM."
+            data-bs-custom-class="custom-tooltip"
+            >Height (cm)</label
+          >
           <input
             type="number"
             class="form-control"
@@ -102,7 +130,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="weight-heart">Weight (kg)</label>
+          <label
+            for="weight-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Enter Your Body Weight in KG"
+            data-bs-custom-class="custom-tooltip"
+            >Weight (kg)</label
+          >
           <input
             type="number"
             class="form-control"
@@ -113,7 +149,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="systolic_bp-heart"
+          <label
+            for="systolic_bp-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Measures the pressure in your arteries when your heart beats. High levels indicate hypertension."
+            data-bs-custom-class="custom-tooltip"
             >Systolic Blood Pressure (mmHg) [Normal Range: 90-120]</label
           >
           <input
@@ -126,7 +168,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="diastolic_bp-heart"
+          <label
+            for="diastolic_bp-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Measures the pressure in your arteries when your heart rests between beats. Elevated levels indicate hypertension."
+            data-bs-custom-class="custom-tooltip"
             >Diastolic Blood Pressure (mmHg) [Normal Range: 60-80]</label
           >
           <input
@@ -139,7 +187,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="cholesterol-heart">Cholesterol </label>
+          <label
+            for="cholesterol-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="High cholesterol levels increase the risk of heart disease and stroke."
+            data-bs-custom-class="custom-tooltip"
+            >Cholesterol
+          </label>
           <select
             class="form-control"
             id="cholesterol-heart"
@@ -153,7 +209,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="glucose-heart">Glucose</label>
+          <label
+            for="glucose-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title=" Blood sugar levels. High levels may indicate diabetes or risk for it."
+            data-bs-custom-class="custom-tooltip"
+            >Glucose</label
+          >
           <select
             class="form-control"
             id="glucose-heart"
@@ -168,7 +232,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="smoking-heart">Smoking </label>
+          <label
+            for="smoking-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Smoking increases the risk of heart disease, lung disease, and cancer."
+            data-bs-custom-class="custom-tooltip"
+            >Smoking
+          </label>
           <select
             class="form-control"
             id="smoking-heart"
@@ -181,7 +253,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="alcohol-heart">Alcohol Consumption ? </label>
+          <label
+            for="alcohol-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Excessive alcohol consumption can damage organs and increase the risk of liver disease and hypertension."
+            data-bs-custom-class="custom-tooltip"
+            >Alcohol Consumption ?
+          </label>
           <select
             class="form-control"
             id="alcohol-heart"
@@ -194,7 +274,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="physical_activity-heart">Physical Activity ?</label>
+          <label
+            for="physical_activity-heart"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Regular exercise improves cardiovascular health, reduces weight, and lowers disease risks."
+            data-bs-custom-class="custom-tooltip"
+            >Physical Activity ?</label
+          >
           <select
             class="form-control"
             id="physical_activity-heart"
@@ -259,7 +347,15 @@
     >
       <form method="POST" action="/predict/diabetes">
         <div class="form-group">
-          <label for="gender-diabetes">Gender</label>
+          <label
+            for="gender-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Biological sex, which may influence diabetes risk."
+            data-bs-custom-class="custom-tooltip"
+            >Gender</label
+          >
           <select
             class="form-control"
             id="gender-diabetes"
@@ -272,7 +368,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="age-diabetes">Age (years)</label>
+          <label
+            for="age-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Enter Your Age in Years."
+            data-bs-custom-class="custom-tooltip"
+            >Age (years)</label
+          >
           <input
             type="number"
             class="form-control"
@@ -283,7 +387,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="hypertension-diabetes">Hypertension ?</label>
+          <label
+            for="hypertension-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="High blood pressure, often linked with diabetes and heart complications."
+            data-bs-custom-class="custom-tooltip"
+            >Hypertension ?</label
+          >
           <select
             class="form-control"
             id="hypertension-diabetes"
@@ -296,7 +408,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="heart_disease-diabetes">Have Heart Disease ?</label>
+          <label
+            for="heart_disease-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Do you ever had or having any heart related disease ?"
+            data-bs-custom-class="custom-tooltip"
+            >Have Heart Disease ?</label
+          >
           <select
             class="form-control"
             id="heart_disease-diabetes"
@@ -310,7 +430,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="smoking_history-diabetes">Smoking History </label>
+          <label
+            for="smoking_history-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title=" Smoking raises the risk of type 2 diabetes and worsens complications."
+            data-bs-custom-class="custom-tooltip"
+            >Smoking History
+          </label>
           <select
             class="form-control"
             id="smoking_history-diabetes"
@@ -327,7 +455,13 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="bmi-diabetes"
+          <label
+            for="bmi-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Body Mass Index, higher values can indicate obesity, a major diabetes risk factor."
+            data-bs-custom-class="custom-tooltip"
             >BMI (Body Mass Index) [Normal Range: 18.5-24.9]</label
           >
           <input
@@ -342,7 +476,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="hemoglobin_a1c-diabetes"
+          <label
+            for="hemoglobin_a1c-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Reflects average blood sugar over 2-3 months; used to diagnose and monitor diabetes."
+            data-bs-custom-class="custom-tooltip"
             >Hemoglobin A1c Level (%) [Normal Range: 4.0-5.6]</label
           >
           <input
@@ -357,7 +497,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="blood_glucose-diabetes"
+          <label
+            for="blood_glucose-diabetes"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Measures current blood sugar levels; crucial for diabetes diagnosis and management."
+            data-bs-custom-class="custom-tooltip"
             >Blood Glucose Level (mg/dL) [Normal Range: 70-140]</label
           >
           <input
@@ -417,7 +563,15 @@
     >
       <form method="POST" action="/predict/kidney">
         <div class="form-group">
-          <label for="age-kidney">Age (years) </label>
+          <label
+            for="age-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Kidney function naturally declines with age, increasing the risk of chronic kidney disease (CKD)."
+            data-bs-custom-class="custom-tooltip"
+            >Age (years)
+          </label>
           <input
             type="number"
             class="form-control"
@@ -428,7 +582,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="blood_pressure-kidney"
+          <label
+            for="blood_pressure-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="High BP damages kidney blood vessels over time, leading to CKD and kidney failure."
+            data-bs-custom-class="custom-tooltip"
             >Blood Pressure (mmHg) [Normal Range: 60-120]</label
           >
           <input
@@ -441,7 +601,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="specific_gravity-kidney"
+          <label
+            for="specific_gravity-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Measures urine concentration. Low values suggest kidney's inability to concentrate urine, while high values may indicate dehydration."
+            data-bs-custom-class="custom-tooltip"
             >Specific Gravity [Normal Range: 1.015-1.025]</label
           >
           <input
@@ -454,7 +620,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="albumin-kidney">Albumin [Normal Range: 0-4]</label>
+          <label
+            for="albumin-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="A protein that should remain in the blood. Its presence in urine (albuminuria) signals kidney damage or dysfunction."
+            data-bs-custom-class="custom-tooltip"
+            >Albumin [Normal Range: 0-4]</label
+          >
           <input
             type="number"
             class="form-control"
@@ -465,7 +639,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="sugar-kidney">Sugar [Normal Range: 0-5]</label>
+          <label
+            for="sugar-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="High urine glucose levels indicate diabetes, a leading cause of kidney disease."
+            data-bs-custom-class="custom-tooltip"
+            >Sugar [Normal Range: 0-5]</label
+          >
           <input
             type="number"
             class="form-control"
@@ -476,7 +658,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="red_blood_cells-kidney">Red Blood Cells</label>
+          <label
+            for="red_blood_cells-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Normally absent in urine. Presence may suggest kidney inflammation, stones, or injury."
+            data-bs-custom-class="custom-tooltip"
+            >Red Blood Cells</label
+          >
           <select
             class="form-control"
             id="red_blood_cells-kidney"
@@ -489,7 +679,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="pus_cells-kidney">Pus Cells</label>
+          <label
+            for="pus_cells-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="White blood cells in urine, often seen in urinary tract infections (UTIs) or kidney infections."
+            data-bs-custom-class="custom-tooltip"
+            >Pus Cells</label
+          >
           <select
             class="form-control"
             id="pus_cells-kidney"
@@ -502,7 +700,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="pus_cell_clumps-kidney">Pus Cell Clumps</label>
+          <label
+            for="pus_cell_clumps-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Clusters of white blood cells, indicating severe infection or inflammation."
+            data-bs-custom-class="custom-tooltip"
+            >Pus Cell Clumps</label
+          >
           <select
             class="form-control"
             id="pus_cell_clumps-kidney"
@@ -515,7 +721,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="bacteria-kidney">Bacteria</label>
+          <label
+            for="bacteria-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Their presence in urine suggests a UTI, which, if untreated, can spread to the kidneys."
+            data-bs-custom-class="custom-tooltip"
+            >Bacteria</label
+          >
           <select
             class="form-control"
             id="bacteria-kidney"
@@ -528,7 +742,13 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="blood_glucose_random-kidney"
+          <label
+            for="blood_glucose_random-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title=" Measures blood sugar at any time. High values are linked to diabetes, a major kidney disease risk factor."
+            data-bs-custom-class="custom-tooltip"
             >Blood Glucose Random (mg/dL) [Normal Range: 70-140]</label
           >
           <input
@@ -541,7 +761,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="blood_urea-kidney"
+          <label
+            for="blood_urea-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="A waste product from protein metabolism. High levels indicate reduced kidney filtration ability."
+            data-bs-custom-class="custom-tooltip"
             >Blood Urea (mg/dL) [Normal Range: 7-20]</label
           >
           <input
@@ -554,7 +780,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="serum_creatinine-kidney"
+          <label
+            for="serum_creatinine-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title=" A key kidney function marker. Elevated levels suggest kidney dysfunction or reduced filtration rate."
+            data-bs-custom-class="custom-tooltip"
             >Serum Creatinine (mg/dL) [Normal Range: 0.6-1.2]</label
           >
           <input
@@ -568,7 +800,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="sodium-kidney"
+          <label
+            for="sodium-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title=" A crucial electrolyte. Imbalances may indicate kidney failure, leading to fluid retention or dehydration."
+            data-bs-custom-class="custom-tooltip"
             >Sodium (mEq/L) [Normal Range: 135-145]</label
           >
           <input
@@ -581,7 +819,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="potassium-kidney"
+          <label
+            for="potassium-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Regulates heart and muscle function. Abnormal levels can be dangerous in kidney disease."
+            data-bs-custom-class="custom-tooltip"
             >Potassium (mEq/L) [Normal Range: 3.5-5.0]</label
           >
           <input
@@ -595,7 +839,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="hemoglobin-kidney"
+          <label
+            for="hemoglobin-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Low levels may indicate anemia, common in CKD due to reduced erythropoietin production."
+            data-bs-custom-class="custom-tooltip"
             >Hemoglobin (g/dL) [Normal Range: 13.8-17.2 (male), 12.1-15.1
             (female)]</label
           >
@@ -610,7 +860,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="pcv-kidney"
+          <label
+            for="pcv-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Reflects red blood cell concentration. Low values suggest anemia, often seen in kidney disease."
+            data-bs-custom-class="custom-tooltip"
             >Packed Cell Volume (PCV) (%) [Normal Range: 38.3-48.6 (male),
             35.5-44.9 (female)]</label
           >
@@ -625,7 +881,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="white_blood_cells-kidney"
+          <label
+            for="white_blood_cells-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="High counts suggest infection or inflammation, potentially affecting kidney health."
+            data-bs-custom-class="custom-tooltip"
             >White Blood Cells (cells/μL) [Normal Range: 4,000-11,000]</label
           >
           <input
@@ -638,7 +900,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="red_blood_cells_count-kidney"
+          <label
+            for="red_blood_cells_count-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="A low count may indicate CKD-related anemia due to impaired red blood cell production."
+            data-bs-custom-class="custom-tooltip"
             >Red Blood Cells Count (million cells/μL) [Normal Range: 4.7-6.1
             (male), 4.2-5.4 (female)]</label
           >
@@ -653,7 +921,15 @@
           />
         </div>
         <div class="form-group">
-          <label for="hypertension-kidney">Hypertension</label>
+          <label
+            for="hypertension-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Both a cause and consequence of kidney disease. High BP can accelerate kidney damage."
+            data-bs-custom-class="custom-tooltip"
+            >Hypertension</label
+          >
           <select
             class="form-control"
             id="hypertension-kidney"
@@ -666,7 +942,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="diabetes_mellitus-kidney">Diabetes Mellitus</label>
+          <label
+            for="diabetes_mellitus-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Chronic high blood sugar can damage kidney filtering units, leading to diabetic nephropathy."
+            data-bs-custom-class="custom-tooltip"
+            >Diabetes Mellitus</label
+          >
           <select
             class="form-control"
             id="diabetes_mellitus-kidney"
@@ -679,7 +963,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="cad-kidney">Coronary Artery Disease</label>
+          <label
+            for="cad-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Common in CKD patients due to shared risk factors like hypertension and diabetes."
+            data-bs-custom-class="custom-tooltip"
+            >Coronary Artery Disease</label
+          >
           <select class="form-control" id="cad-kidney" name="cad" required>
             <option value="" disabled selected>Select</option>
             <option value="yes">Yes</option>
@@ -687,7 +979,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="appetite-kidney">Appetite</label>
+          <label
+            for="appetite-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Loss of appetite may occur due to toxin buildup in kidney failure."
+            data-bs-custom-class="custom-tooltip"
+            >Appetite</label
+          >
           <select
             class="form-control"
             id="appetite-kidney"
@@ -700,7 +1000,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="pedal_edema-kidney">Pedal Edema</label>
+          <label
+            for="pedal_edema-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Swelling in feet due to fluid retention, a common sign of kidney dysfunction."
+            data-bs-custom-class="custom-tooltip"
+            >Pedal Edema</label
+          >
           <select
             class="form-control"
             id="pedal_edema-kidney"
@@ -713,7 +1021,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="anemia-kidney">Anemia</label>
+          <label
+            for="anemia-kidney"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="CKD can reduce red blood cell production, leading to fatigue and weakness."
+            data-bs-custom-class="custom-tooltip"
+            >Anemia</label
+          >
           <select
             class="form-control"
             id="anemia-kidney"

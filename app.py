@@ -1,8 +1,10 @@
+import numpy as np
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 import joblib
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -182,10 +184,15 @@ def predict_heart():
                 # Load the model
                 model = joblib.load(model_path)
 
-                # Make prediction
-                prediction = model.predict(features)[0]
-                # Assuming predict_proba is implemented
-                probability = model.predict_proba(features)[0][1] * 100
+                feature_names = ['Age', 'Gender', 'Height(cm)', 'Weight(kg)', 'Systolic_Blood_Pressure',
+                                 'Diastolic_Blood_Pressure', 'Cholesterol', 'Glucose', 'Smoking', 'Alcohol', 'Physical_Activity']
+
+                features_df = pd.DataFrame(features, columns=feature_names)
+                # make prediction
+                prediction = model.predict(features_df)[0]
+
+                # calculate probility
+                probability = model.predict_proba(features_df)[0][1] * 100
 
                 # Map prediction to result
                 final_result = "Positive" if prediction == 1 else "Negative"
@@ -217,6 +224,8 @@ def predict_heart():
 
 
 # Handling diabetes form details
+
+
 @app.route('/predict/diabetes', methods=['POST'])
 def predict_diabetes():
     if 'logged_in' not in session:
@@ -228,8 +237,8 @@ def predict_diabetes():
         user_details = {
             "age": int(request.form['age']),
             "gender": request.form['gender'],
-            "hypertension": "Yes" if int(request.form['hypertension']) == 1 else "No",
-            "heart_disease": "Yes" if int(request.form['heart_disease']) == 1 else "No",
+            "hypertension": int(request.form['hypertension']),
+            "heart_disease": int(request.form['heart_disease']),
             "smoking_history": request.form['smoking_history'],
             "bmi": float(request.form['bmi']),
             "hemoglobin_a1c": float(request.form['hemoglobin_a1c']),
@@ -242,20 +251,29 @@ def predict_diabetes():
             flash('Please select at least one algorithm.', 'warning')
             return redirect(url_for('predict'))
 
-        # Prepare input for prediction
-        features = [[
+        # Encode categorical variables as done during training
+        feature_names = [
+            "Gender", "Age", "Hypertension", "Heart_Disease", "Smoking_History",
+            "BMI", "Hemoglobin_A1c_Level", "Blood_Glucose_Level"
+        ]
+
+        feature_values = [[
+            1 if user_details["gender"] == "Male" else 0,  # Encode Gender
             user_details["age"],
-            1 if user_details["gender"] == "Male" else 0,
-            1 if user_details["hypertension"] == "Yes" else 0,
-            1 if user_details["heart_disease"] == "Yes" else 0,
-            0 if user_details["smoking_history"] == "No Info" else
-            (1 if user_details["smoking_history"] == "never" else
-             2 if user_details["smoking_history"] == "former" else
-             3 if user_details["smoking_history"] == "current" else 4),
+            user_details["hypertension"],
+            user_details["heart_disease"],
+            {"No Info": 0, "never": 1, "former": 2, "current": 3}.get(
+                user_details["smoking_history"], 4),
             user_details["bmi"],
             user_details["hemoglobin_a1c"],
             user_details["blood_glucose"]
         ]]
+
+        # Convert to DataFrame for models that require column names
+        input_df = pd.DataFrame(feature_values, columns=feature_names)
+
+        # Convert to NumPy array for models that do not require column names
+        input_array = input_df.values
 
         # List to store results
         results = []
@@ -267,10 +285,15 @@ def predict_diabetes():
                 # Load the model
                 model = joblib.load(model_path)
 
-                # Make prediction
-                prediction = model.predict(features)[0]
-                # Assuming predict_proba is implemented
-                probability = model.predict_proba(features)[0][1] * 100
+                # Determine correct input format
+                if isinstance(model, (joblib.load(model_path).__class__)):
+                    # Use DataFrame if model was trained with feature names
+                    prediction = model.predict(input_df)[0]
+                    probability = model.predict_proba(input_df)[0][1] * 100
+                else:
+                    # Use NumPy array if model was trained without feature names
+                    prediction = model.predict(input_array)[0]
+                    probability = model.predict_proba(input_array)[0][1] * 100
 
                 # Map prediction to result
                 final_result = "Positive" if prediction == 1 else "Negative"
@@ -292,10 +315,15 @@ def predict_diabetes():
                     "result": f"Error: {str(e)}"
                 })
 
-        # Pass user details and results to a new template
-        return render_template('results_diabetes.html', user_details=user_details, results=results, user_name=session.get('user_name'),
-                               user_email=session.get('user_email'),
-                               user_phone=session.get('user_phone'))
+        # Render results template
+        return render_template(
+            'results_diabetes.html',
+            user_details=user_details,
+            results=results,
+            user_name=session.get('user_name'),
+            user_email=session.get('user_email'),
+            user_phone=session.get('user_phone')
+        )
 
     except Exception as e:
         flash(f"Error during prediction: {e}", 'danger')
