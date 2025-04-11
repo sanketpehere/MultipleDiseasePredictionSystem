@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: multiple-disease-predictor
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: DATABASE_URL
+        value: mysql+pymysql://root:NHfoUBWZFNHZUpdOavBKGSKdUJXRWpbI@centerbeam.proxy.rlwy.net:53235/railway

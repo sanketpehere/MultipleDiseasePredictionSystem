@@ -8,12 +8,15 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# MySQL Configurations
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''  # Set MySQL password if any
-app.config['MYSQL_DB'] = 'projectdb'
-app.config['SECRET_KEY'] = '151220'  # Fixed secret key for session handling
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:NHfoUBWZFNHZUpdOavBKGSKdUJXRWpbI@centerbeam.proxy.rlwy.net:53235/railway'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
+# app.config['MYSQL_HOST'] = 'localhost'
+# app.config['MYSQL_USER'] = 'root'
+# app.config['MYSQL_PASSWORD'] = ''  # Set MySQL password if any
+# app.config['MYSQL_DB'] = 'projectdb'
+# app.config['SECRET_KEY'] = '151220'  # Fixed secret key for session handling
 
 mysql = MySQL(app)
 
