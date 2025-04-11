@@ -22,6 +22,7 @@ body {
 {
   margin: 10px auto; /* Centers the navbar horizontally */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+  
 }
 
 a {
@@ -40,7 +41,7 @@ a:hover {
 {
   color: black;
 }
-
+ 
 .ft
 {
   position: fixed;

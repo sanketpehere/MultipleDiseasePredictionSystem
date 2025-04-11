@@ -80,6 +80,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Enter Your Age."
             data-bs-custom-class="custom-tooltip"
+            class="moderate"
             >Age (years)
           </label>
 
@@ -102,6 +103,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Enter Your Gender."
             data-bs-custom-class="custom-tooltip"
+            class="low"
             >Gender</label
           >
           <select class="form-control" id="gender-heart" name="gender" required>
@@ -118,6 +120,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Enter Your Height in CM."
             data-bs-custom-class="custom-tooltip"
+            class="low"
             >Height (cm)</label
           >
           <input
@@ -137,6 +140,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Enter Your Body Weight in KG"
             data-bs-custom-class="custom-tooltip"
+            class="moderate"
             >Weight (kg)</label
           >
           <input
@@ -156,6 +160,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Measures the pressure in your arteries when your heart beats. High levels indicate hypertension."
             data-bs-custom-class="custom-tooltip"
+            class="high"
             >Systolic Blood Pressure (mmHg) [Normal Range: 90-120]</label
           >
           <input
@@ -175,6 +180,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Measures the pressure in your arteries when your heart rests between beats. Elevated levels indicate hypertension."
             data-bs-custom-class="custom-tooltip"
+            class="high"
             >Diastolic Blood Pressure (mmHg) [Normal Range: 60-80]</label
           >
           <input
@@ -194,6 +200,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="High cholesterol levels increase the risk of heart disease and stroke."
             data-bs-custom-class="custom-tooltip"
+            class="high"
             >Cholesterol
           </label>
           <select
@@ -216,6 +223,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title=" Blood sugar levels. High levels may indicate diabetes or risk for it."
             data-bs-custom-class="custom-tooltip"
+            class="moderate"
             >Glucose</label
           >
           <select
@@ -239,6 +247,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Smoking increases the risk of heart disease, lung disease, and cancer."
             data-bs-custom-class="custom-tooltip"
+            class="moderate"
             >Smoking
           </label>
           <select
@@ -260,6 +269,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Excessive alcohol consumption can damage organs and increase the risk of liver disease and hypertension."
             data-bs-custom-class="custom-tooltip"
+            class="moderate"
             >Alcohol Consumption ?
           </label>
           <select
@@ -281,6 +291,7 @@
             data-bs-custom-class="custom-tooltip"
             data-bs-title="Regular exercise improves cardiovascular health, reduces weight, and lowers disease risks."
             data-bs-custom-class="custom-tooltip"
+            class="low"
             >Physical Activity ?</label
           >
           <select
@@ -297,8 +308,8 @@
         <div class="algorithm-selection">
           <p>
             We have observed that
-            <strong>Random Forest And Gradient Boosting</strong> models perform
-            best for heart disease.
+            <strong>Logistic Regression and Random Forest</strong> models
+            perform best for heart disease.
           </p>
           <div class="form-group">
             <label><strong>Select Algorithms:</strong></label
@@ -327,16 +338,17 @@
               value="gradient_boosting"
             />
             Gradient Boosting<br />
-            <input type="checkbox" name="algorithms" value="adaboost" />
-            adaboost<br />
-
+            <input type="checkbox" name="algorithms" value="Adaboost" />
+            Adaboost<br />
+            <!-- <input type="checkbox" name="algorithms" value="stacked" />
+            stacked<br />-->
             <!-- Add other algorithms as needed -->
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Get Results</button>
+        <br /><br /><br /><br />
       </form>
     </div>
-    <br />
 
     <!-- Diabetes Form -->
     <div
@@ -551,6 +563,7 @@
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Get Results</button>
+        <br /><br /><br /><br />
       </form>
     </div>
 
@@ -1076,6 +1089,7 @@
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Get Results</button>
+        <br /><br /><br /><br />
       </form>
     </div>
 
@@ -1219,9 +1233,8 @@
         <div class="algorithm-selection">
           <p>
             We have observed that
-            <strong>Logistic Regression and Decision Tree </strong> models
-            perform best for heart disease. Still, you can select the algorithms
-            if you want to go with them.
+            <strong>Logistic Regression and Random Forest </strong> models
+            perform best for Liver disease.
           </p>
           <div class="form-group">
             <label><strong>Select Algorithms:</strong></label
@@ -1251,9 +1264,8 @@
             <!-- Add other algorithms as needed -->
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">
-          Predict Liver Disease
-        </button>
+        <button type="submit" class="btn btn-primary">Get Results</button>
+        <br /><br /><br /><br />
       </form>
     </div>
   </div>

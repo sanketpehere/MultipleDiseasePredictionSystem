@@ -10,7 +10,7 @@
 
   <!-- Display User Details -->
   <h3><strong>User Details</strong></h3>
-  <table class="table table-bordered table">
+  <table class="table custom-table">
     <tbody>
       <tr>
         <td><strong>Name</strong></td>
@@ -31,7 +31,7 @@
   <br />
 
   <h3><strong>Health Information</strong></h3>
-  <table class="table table-striped">
+  <table class="table custom-table">
     <thead>
       <tr>
         <th>Sr. No.</th>
@@ -98,13 +98,13 @@
 
   <!-- Display Prediction Results -->
   <h3><strong>Model-wise Prediction Results</strong></h3>
-  <table class="table table-striped">
+  <table class="table custom-table">
     <thead>
       <tr>
         <th>Sr. No.</th>
         <th>Disease</th>
-        <th>Name of Selected Model</th>
-        <th>Probability</th>
+        <!--<th>Name of Selected Model</th>-->
+        <!--<th>Probability</th>-->
         <th>Final Result</th>
       </tr>
     </thead>
@@ -121,7 +121,11 @@
     </tbody>
   </table>
 
-  <button class="btn btn-primary mt-4" onclick="window.print()">
+  <button
+    class="btn btn-primary mt-4"
+    id="print-button"
+    onclick="window.print()"
+  >
     Print Results
   </button>
 </div>
