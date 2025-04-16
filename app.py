@@ -14,7 +14,7 @@ app = Flask(__name__)
 # app.config['MYSQL_DB'] = 'projectdb'
 # app.config['SECRET_KEY'] = '151220'  # Fixed secret key for session handling
 
-app.config['MYSQL_HOST'] = 'NHfoUBWZFNHZUpdOavBKGSKdUJXRWpbI'
+app.config['MYSQL_HOST'] = 'centerbeam.proxy.rlwy.net'
 app.config['MYSQL_PORT'] = 53235
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'NHfoUBWZFNHZUpdOavBKGSKdUJXRWpbI'
