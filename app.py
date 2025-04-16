@@ -20,6 +20,10 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'NHfoUBWZFNHZUpdOavBKGSKdUJXRWpbI'
 app.config['MYSQL_DB'] = 'railway'
 app.config['SECRET_KEY'] = '151220'
+<<<<<<< HEAD
+=======
+
+>>>>>>> b448a6884f3a68003a9530bacc637288508536de
 
 mysql = MySQL(app)
 
