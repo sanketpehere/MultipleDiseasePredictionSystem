@@ -19,6 +19,7 @@ app.config['MYSQL_PORT'] = 53235
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'NHfoUBWZFNHZUpdOavBKGSKdUJXRWpbI'
 app.config['MYSQL_DB'] = 'railway'
+app.config['SECRET_KEY'] = '151220'
 
 
 mysql = MySQL(app)
